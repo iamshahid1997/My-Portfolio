@@ -72,7 +72,7 @@ function Projects() {
         </div>
         <div
           ref={containerRef}
-          className={`lg:w-1/2 lg:h-2/3 p-8 rounded-xl lg:ml-10 mx-3 lg:mx-0`}
+          className={`lg:w-1/2 lg:h-2/3 p-4 lg:p-8 rounded-xl lg:ml-10 mx-3 lg:mx-0`}
           style={{ backgroundColor: activeData.swatchColor }}
         >
           <img

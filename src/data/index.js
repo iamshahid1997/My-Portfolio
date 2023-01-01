@@ -7,8 +7,8 @@ export const data = [
   {
     id: 1,
     heading: 'SHAHID ANSARI',
-    subHeading: 'HI, I AM',
-    text: 'Welcome to my webiste. Here you can find out everthing related to my professional life and skills.',
+    subHeading: 'I AM',
+    text: 'Welcome to my website. Here you can find out everthing related to my professional life and skills.',
     swatchColor: '#E6D3C4',
     background: '#E5E5E5',
     headingColor: '#1F333E',
