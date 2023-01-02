@@ -28,10 +28,9 @@ function Content({ activeData, swatchData }) {
         <div className='text-left text-5xl font-bold mb-1 w-full relative p-1 overflow-hidden md:text-[4vw] md:mb-2 tracking-wider'>
           <p className='text'>{activeData.heading}</p>
         </div>
-
-        <p className='w-full text-sm font-medium text-left mb-8 p-1 overflow-hidden md:text-lg md:mb-10 capitalize tracking-widest'>
+        <div className='w-full text-sm font-medium text-left mb-8 p-1 overflow-hidden md:text-lg md:mb-10 capitalize tracking-widest'>
           <p className='text'>{activeData.text}</p>
-        </p>
+        </div>
       </div>
     </div>
   );

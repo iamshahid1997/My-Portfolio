@@ -54,7 +54,7 @@ function Banner() {
     </div>
   ) : (
     <div ref={banner} className='w-screen h-screen relative'>
-      <div className='logo absolute my-2 ml-6 text-left text-2xl font-bold tracking-widest md:ml-28 lg:ml-[12vw] lg:my-8'>
+      <div className='logo flex absolute my-2 ml-6 text-left text-2xl font-bold tracking-widest md:ml-28 lg:ml-[12vw] lg:my-8'>
         Hi THERE.
       </div>
       <div className='w-full h-full flex justify-between items-center'>
