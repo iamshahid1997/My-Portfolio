@@ -20,16 +20,16 @@ function Projects() {
     setCurrentProject(item.id - 1);
   }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentProject !== 3) {
-        setCurrentProject((prev) => prev + 1);
-      } else {
-        setCurrentProject(0);
-      }
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [currentProject]);
+//   useEffect(() => {
+//     const ContainerInterval = setInterval(() => {
+//       if (currentProject !== 3) {
+//         setCurrentProject((prev) => prev + 1);
+//       } else {
+//         setCurrentProject(0);
+//       }
+//     }, 8000);
+//     return () => clearInterval(ContainerInterval);
+//   }, [currentProject]);
 
   useEffect(() => {
     gsap.from('.title', {
@@ -41,12 +41,12 @@ function Projects() {
 
   useEffect(() => {
     gsap.from(containerRef.current, {
-      opacity: 0,
+      //   opacity: 0,
       x: -200,
       ease: 'power4.inOut',
       duration: 1,
       scrollTrigger: {
-        trigger: containerRef.current, // make .panel2 the trigger
+        trigger: '.title', // make .panel2 the trigger
         // start: '10% top', // 10% of .panel2 enters the bottom of the viewport
         // Whatever other ScrollTrigger vars you need here
       },
@@ -74,7 +74,7 @@ function Projects() {
       },
     });
     return () => {};
-  });
+  }, [currentProject]);
   return (
     <div className='py-20 mb-20'>
       <p className='title text-3xl tracking-widest capitalize font-bold'>

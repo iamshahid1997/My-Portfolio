@@ -21,7 +21,7 @@ function Banner() {
       }
     }, 8000);
     return () => clearInterval(interval);
-  });
+  }, [currentIndex]);
 
   useEffect(() => {
     gsap.from('.logo', {
