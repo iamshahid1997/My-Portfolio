@@ -92,10 +92,11 @@ function Skills() {
     for (let i = 0; i < SKILLS.length; i++) {
       gsap.from(`.box${i}`, {
         x: -60,
+        y: -10,
         opacity:0,
         ease: 'power3.easeOut',
-        delay: i * 1 + 0.1,
-        duration: 0.1,
+        delay: i * 1 + 0.01,
+        duration: 0.01,
         
         scrollTrigger: {
           trigger: boxRef.current,

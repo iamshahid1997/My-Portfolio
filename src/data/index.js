@@ -1,4 +1,5 @@
 import portfolio from '../assets/portfolio.png';
+import portfolio1 from '../assets/portfolio1.png';
 import apple from '../assets/apple.png';
 import fb from '../assets/fb.png';
 import chatbot from '../assets/chatbot.png';
@@ -29,6 +30,15 @@ export const data = [
 export const projectData = [
   {
     id: 1,
+    image: portfolio1,
+    title: 'Portfolio Website using Three js and GSAP',
+    description: 'Showcasing my projects and designing skills.',
+    github_link: 'https://github.com/iamshahid1997/My-Portfolio',
+    website: 'https://shahidportfolioo.netlify.app/',
+    swatchColor: '#E6D3D9',
+  },
+  {
+    id: 2,
     image: portfolio,
     title: 'Portfolio Website using Material UI',
     description: 'Showcase my skills and projects.',
@@ -37,7 +47,7 @@ export const projectData = [
     swatchColor: '#E6D3C4',
   },
   {
-    id: 2,
+    id: 3,
     image: apple,
     title: 'Apple Redesign',
     description:
@@ -47,7 +57,7 @@ export const projectData = [
     swatchColor: '#79716C',
   },
   {
-    id: 3,
+    id: 4,
     image: fb,
     title: 'FaceBook Clone',
     description:
@@ -57,12 +67,12 @@ export const projectData = [
     swatchColor: '#4F92B1',
   },
   {
-    id: 4,
+    id: 5,
     image: chatbot,
     title: 'ChatBot',
     description: 'Chatbot UI with predefined responses.',
     github_link: 'https://github.com/iamshahid1997/ChatBot',
     website: 'https://yourchatbot.netlify.app',
-    swatchColor: '#503830',
+    swatchColor: '#4E92C2',
   },
 ];

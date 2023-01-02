@@ -11,6 +11,7 @@ function Projects() {
   const underLineRef = useRef(null);
   const imgRef = useRef(null);
   const containerRef = useRef(null);
+  const swatchRef = useRef(null);
 
   const [currentProject, setCurrentProject] = useState(0);
 
@@ -20,16 +21,16 @@ function Projects() {
     setCurrentProject(item.id - 1);
   }
 
-//   useEffect(() => {
-//     const ContainerInterval = setInterval(() => {
-//       if (currentProject !== 3) {
-//         setCurrentProject((prev) => prev + 1);
-//       } else {
-//         setCurrentProject(0);
-//       }
-//     }, 8000);
-//     return () => clearInterval(ContainerInterval);
-//   }, [currentProject]);
+  //   useEffect(() => {
+  //     const ContainerInterval = setInterval(() => {
+  //       if (currentProject !== 3) {
+  //         setCurrentProject((prev) => prev + 1);
+  //       } else {
+  //         setCurrentProject(0);
+  //       }
+  //     }, 8000);
+  //     return () => clearInterval(ContainerInterval);
+  //   }, [currentProject]);
 
   useEffect(() => {
     gsap.from('.title', {
@@ -37,11 +38,23 @@ function Projects() {
       ease: 'power3.inOut',
       duration: 0.8,
     });
+    gsap.from(swatchRef.current, {
+      opacity: 0,
+      x: -50,
+      y: -30,
+      ease: 'power4.inOut',
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.title', // make .panel2 the trigger
+        // start: '10% top', // 10% of .panel2 enters the bottom of the viewport
+        // Whatever other ScrollTrigger vars you need here
+      },
+    });
   }, []);
 
   useEffect(() => {
     gsap.from(containerRef.current, {
-      //   opacity: 0,
+      opacity: 0,
       x: -200,
       ease: 'power4.inOut',
       duration: 1,
@@ -64,7 +77,7 @@ function Projects() {
       },
     });
     gsap.from('span', {
-      y: -50,
+      y: -600,
       ease: 'power4.inOut',
       duration: 1,
       scrollTrigger: {
@@ -81,7 +94,10 @@ function Projects() {
         My PROJECTS.
       </p>
       <div className='w-screen h-auto flex flex-col lg:flex-row lg:justify-center justify-center items-center gap-y-10 lg:gap-y-0 lg:gap-x-32 relative mt-4 lg:mt-10'>
-        <div className='h-fit absolute z-20 w-full bottom-[-70px] flex justify-center gap-8 mb-2 lg:w-fit lg:flex-row items-center'>
+        <div
+          ref={swatchRef}
+          className='h-fit absolute z-20 w-full bottom-[-70px] flex justify-center gap-8 mb-2 lg:w-fit lg:flex-row items-center'
+        >
           {projectData.map((data) => (
             <SwatchCircle
               key={data.id}
@@ -93,7 +109,7 @@ function Projects() {
         </div>
         <div
           ref={containerRef}
-          className={`lg:w-1/2 lg:h-2/3 shadow-inner p-4 lg:p-8 rounded-xl lg:ml-10 mx-3 lg:mx-0`}
+          className={`lg:w-1/2 lg:h-2/3 p-4 lg:p-8 rounded-xl lg:ml-10 mx-3 lg:mx-0 shadow-2xl`}
           style={{ backgroundColor: projectData[currentProject].swatchColor }}
         >
           <img
@@ -108,6 +124,7 @@ function Projects() {
         </div>
         <div className='flex flex-col gap-y-2 lg:items-start w-2/3'>
           <div
+            ref={textRef}
             className='text-3xl relative font-thin capitalize tracking-widest hover:scale-110 transition-all duration-300 overflow-hidden'
             style={{ color: projectData[currentProject].swatchColor }}
           >
@@ -117,8 +134,10 @@ function Projects() {
               rel='noreferrer'
               className='flex gap-x-2 items-center'
             >
-              <AiOutlineLink />
-              <span ref={textRef} className='capitalize'>
+              <span>
+                <AiOutlineLink />
+              </span>
+              <span className='capitalize'>
                 {projectData[currentProject].title}
               </span>
             </a>
@@ -132,9 +151,18 @@ function Projects() {
           </div>
           <div className='overflow-hidden animate-bounce ml-8 font-extralight flex gap-x-2 items-center capitalize tracking-widest text-gray-500 mt-3'>
             <span>
-              <AiFillGithub />
+              <a
+                href={projectData[currentProject].github_link}
+                target='_blank'
+                rel='noreferrer'
+                className='flex items-center space-x-3 '
+              >
+                <span>
+                  <AiFillGithub />
+                </span>
+                <span>Link to my Repo.</span>
+              </a>
             </span>
-            <span>Link to my Repo.</span>
           </div>
         </div>
       </div>
